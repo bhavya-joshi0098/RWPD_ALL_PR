@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bars Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h4>Progress Bars</h4>
+    
+    <!-- A) Basic Progress Bar -->
+    <div class="progress mb-3">
+      <div class="progress-bar" role="progressbar" style="width: 40%"></div>
+    </div>
+
+    <!-- B) Progress Bar with Label -->
+    <div class="progress mb-3">
+      <div class="progress-bar" role="progressbar" style="width: 50%">50%</div>
+    </div>
+
+    <!-- C) Multi-color, Striped, and Animated Progress Bars -->
+    <!-- Multi-color -->
+    <div class="progress mb-3">
+      <div class="progress-bar bg-success" role="progressbar" style="width: 30%">30%</div>
+      <div class="progress-bar bg-info" role="progressbar" style="width: 20%">20%</div>
+      <div class="progress-bar bg-warning" role="progressbar" style="width: 15%">15%</div>
+    </div>
+
+    <!-- Striped and Animated -->
+    <div class="progress mb-3">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 60%">60%</div>
+    </div>
+
+    <!-- D) Dynamic Progress Bar -->
+    <div class="progress mb-3">
+      <div id="dynamic-bar" class="progress-bar bg-primary" role="progressbar" style="width: 10%">10%</div>
+    </div>
+    <button class="btn btn-primary" onclick="updateProgress()">Increase Progress</button>
+  </div>
+
+  <script>
+    function updateProgress() {
+      let progressBar = document.getElementById('dynamic-bar');
+      let currentValue = parseInt(progressBar.style.width);
+      if (currentValue < 100) {
+        progressBar.style.width = (currentValue + 10) + '%';
+        progressBar.innerHTML = (currentValue + 10) + '%';
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
